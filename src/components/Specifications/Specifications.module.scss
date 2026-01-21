@@ -1,0 +1,61 @@
+@use "@/styles/variables" as *;
+
+.specifications {
+  padding: 100px 0;
+  background: $bg-secondary;
+}
+
+.container {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 $spacing-sm;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: $text-secondary;
+  text-align: center;
+  margin: 0 0 $spacing-xl;
+}
+
+.table {
+  max-width: 800px;
+  margin: 0 auto;
+  background: $glass-bg;
+  border: 1px solid $glass-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacing-md $spacing-lg;
+  border-bottom: 1px solid $glass-border;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+}
+
+.label {
+  color: $text-secondary;
+  font-weight: 500;
+}
+
+.value {
+  color: $text-primary;
+  text-align: right;
+  font-weight: 600;
+}
