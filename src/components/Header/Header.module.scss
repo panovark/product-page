@@ -1,0 +1,72 @@
+@use "@/styles/variables" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: $spacing-md $spacing-lg;
+  background: rgba($bg-dark, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $glass-border;
+}
+
+.container {
+  max-width: $container-max;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-lg;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 28px;
+    width: auto;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: $spacing-lg;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+
+  a {
+    color: $text-secondary;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color $transition;
+
+    &:hover {
+      color: $text-primary;
+    }
+  }
+}
+
+.cta {
+  padding: $spacing-sm $spacing-md;
+  background: linear-gradient(135deg, $primary 0%, $primary-light 100%);
+  color: $text-primary;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: $radius;
+  transition: all $transition;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba($primary, 0.4);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $spacing-sm;
+    font-size: 0.85rem;
+  }
+}
