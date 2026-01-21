@@ -16,7 +16,7 @@ export function Hero() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.title}>
-            OAK <span>4</span> D
+            OAK <span className={styles.highlight}>4</span> D
           </h1>
           <p className={styles.subtitle}>
             The most advanced stereo vision and edge inference camera. A true

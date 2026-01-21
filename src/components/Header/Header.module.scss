@@ -24,11 +24,11 @@
 .logo {
   display: flex;
   align-items: center;
+}
 
-  img {
-    height: 28px;
-    width: auto;
-  }
+.logoImg {
+  height: 28px;
+  width: auto;
 }
 
 .nav {
@@ -38,16 +38,16 @@
   @media (max-width: $breakpoint-mobile) {
     display: none;
   }
+}
 
-  a {
-    color: $text-secondary;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color $transition;
+.navLink {
+  color: $text-secondary;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color $transition;
 
-    &:hover {
-      color: $text-primary;
-    }
+  &:hover {
+    color: $text-primary;
   }
 }
 

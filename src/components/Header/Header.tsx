@@ -11,12 +11,12 @@ export function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <a href="/" className={styles.logo}>
-          <img src="/logo-white.svg" alt="Luxonis" />
+          <img src="/logo-white.svg" alt="Luxonis" className={styles.logoImg} />
         </a>
 
         <nav className={styles.nav}>
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href}>
+            <a key={link.href} href={link.href} className={styles.navLink}>
               {link.label}
             </a>
           ))}
