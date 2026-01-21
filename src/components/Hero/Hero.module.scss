@@ -1,0 +1,147 @@
+@use "@/styles/variables" as *;
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  background: linear-gradient(
+    180deg,
+    $bg-dark 0%,
+    $bg-secondary 50%,
+    $bg-dark 100%
+  );
+}
+
+.container {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-xl;
+  align-items: center;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.title {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+
+  span {
+    background: linear-gradient(135deg, $primary-light 0%, $accent-cyan 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: $text-secondary;
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0;
+
+  @media (max-width: $breakpoint-tablet) {
+    margin: 0 auto;
+  }
+}
+
+.features {
+  display: flex;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+
+  @media (max-width: $breakpoint-tablet) {
+    justify-content: center;
+  }
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-sm $spacing-md;
+  background: $glass-bg;
+  border: 1px solid $glass-border;
+  border-radius: $radius;
+}
+
+.value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $accent-cyan;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-md;
+
+  @media (max-width: $breakpoint-tablet) {
+    justify-content: center;
+  }
+}
+
+.btnPrimary {
+  padding: $spacing-md $spacing-lg;
+  background: linear-gradient(135deg, $primary 0%, $primary-light 100%);
+  color: $text-primary;
+  font-weight: 600;
+  border-radius: $radius;
+  transition: all $transition;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba($primary, 0.4);
+  }
+}
+
+.btnSecondary {
+  padding: $spacing-md $spacing-lg;
+  background: transparent;
+  color: $text-primary;
+  font-weight: 600;
+  border: 1px solid $glass-border;
+  border-radius: $radius;
+  transition: all $transition;
+
+  &:hover {
+    background: $glass-bg;
+    border-color: $primary-light;
+  }
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $breakpoint-tablet) {
+    order: -1;
+  }
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 60px rgba($accent-cyan, 0.2));
+}
