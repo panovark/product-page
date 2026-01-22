@@ -8,8 +8,10 @@
 }
 
 .container {
+  @include container;
+
   @media (max-width: $breakpoint-mobile) {
-    padding: 0 $spacing-sm;
+    padding: 0;
   }
 }
 
@@ -35,8 +37,8 @@
     grid-auto-flow: column;
     grid-auto-columns: minmax(260px, 100%);
     overflow-x: scroll;
-    padding: 0 0 $spacing-sm;
-    scroll-padding-inline: $spacing-xs;
+    padding: 0 $spacing-sm $spacing-xs;
+    scroll-padding-inline: $spacing-sm;
     gap: $spacing-sm;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
