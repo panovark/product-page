@@ -33,6 +33,11 @@
   max-width: 600px;
   margin: 0 auto $spacing-xl;
   line-height: 1.7;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
 }
 
 .actions {
@@ -55,6 +60,11 @@
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba($primary, 0.4);
   }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    padding: $spacing-sm $spacing-lg;
+  }
 }
 
 .btnSecondary {
@@ -70,5 +80,10 @@
   &:hover {
     background: $glass-bg;
     border-color: $primary-light;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    padding: $spacing-sm $spacing-lg;
   }
 }
