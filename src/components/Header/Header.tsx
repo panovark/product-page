@@ -1,3 +1,7 @@
+import { Logo } from "./Logo";
+import { DesktopNav } from "./DesktopNav";
+import { CTAButton } from "./CTAButton";
+import { MobileMenu } from "./MobileMenu";
 import styles from "./Header.module.scss";
 
 const navLinks = [
@@ -6,30 +10,17 @@ const navLinks = [
   { label: "Gallery", href: "#gallery" },
 ];
 
+const GETTING_STARTED_URL =
+  "https://docs.luxonis.com/hardware/platform/deploy/oak4-deployment-guide/oak4-getting-started";
+
 export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <a href="/" className={styles.logo}>
-          <img src="/logo-white.svg" alt="Luxonis" className={styles.logoImg} />
-        </a>
-
-        <nav className={styles.nav}>
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className={styles.navLink}>
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        <a
-          href="https://docs.luxonis.com/hardware/platform/deploy/oak4-deployment-guide/oak4-getting-started"
-          className={styles.cta}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Get Started
-        </a>
+        <Logo />
+        <DesktopNav links={navLinks} />
+        <CTAButton href={GETTING_STARTED_URL}>Get Started</CTAButton>
+        <MobileMenu links={navLinks} />
       </div>
     </header>
   );

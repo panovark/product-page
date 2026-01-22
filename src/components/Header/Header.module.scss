@@ -6,19 +6,18 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding: $spacing-md $spacing-lg;
-  background: rgba($bg-dark, 0.8);
-  backdrop-filter: blur(10px);
+  background: $glass-bg;
+  backdrop-filter: blur(20px);
   border-bottom: 1px solid $glass-border;
 }
 
 .container {
   max-width: $container-max;
   margin: 0 auto;
+  padding: $spacing-md $spacing-lg;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: $spacing-lg;
 }
 
 .logo {
@@ -31,19 +30,19 @@
   width: auto;
 }
 
+// Desktop Navigation
 .nav {
-  display: flex;
+  display: none;
   gap: $spacing-lg;
 
-  @media (max-width: $breakpoint-mobile) {
-    display: none;
+  @media (min-width: 768px) {
+    display: flex;
   }
 }
 
 .navLink {
   color: $text-secondary;
   font-weight: 500;
-  font-size: 0.95rem;
   transition: color $transition;
 
   &:hover {
@@ -51,22 +50,134 @@
   }
 }
 
+// CTA Button
 .cta {
-  padding: $spacing-sm $spacing-md;
+  padding: $spacing-sm $spacing-lg;
   background: linear-gradient(135deg, $primary 0%, $primary-light 100%);
   color: $text-primary;
   font-weight: 600;
-  font-size: 0.9rem;
   border-radius: $radius;
   transition: all $transition;
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba($primary, 0.4);
+    box-shadow: 0 4px 20px rgba($primary, 0.4);
   }
+}
 
-  @media (max-width: $breakpoint-mobile) {
-    padding: $spacing-sm;
-    font-size: 0.85rem;
+// Burger Button (Mobile)
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  @media (min-width: 768px) {
+    display: none;
   }
+}
+
+.burgerLine {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: $text-primary;
+  border-radius: 1px;
+  transition: all $transition;
+}
+
+// Mobile Menu Overlay
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 200;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+// Mobile Menu Sheet
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  max-width: 85vw;
+  background: $bg-secondary;
+  border-left: 1px solid $glass-border;
+  padding: $spacing-xl $spacing-lg;
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.menuTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 $spacing-xl;
+  color: $text-primary;
+}
+
+.menuLinks {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.menuLink {
+  font-size: 1.125rem;
+  color: $text-secondary;
+  padding: $spacing-sm 0;
+  transition: color $transition;
+
+  &:hover {
+    color: $text-primary;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: $spacing-md;
+  right: $spacing-md;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  color: $text-secondary;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color $transition;
+
+  &:hover {
+    color: $text-primary;
+  }
+}
+
+// Screen reader only
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
