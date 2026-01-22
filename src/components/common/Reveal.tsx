@@ -3,7 +3,7 @@ import { motion, useInView } from "motion/react";
 
 interface RevealProps {
   children: React.ReactNode;
-  // Delay in secodns
+  // Delay in seconds
   delay?: number;
   // Vertical offset
   y?: number;

@@ -1,5 +1,6 @@
 import styles from "./Hero.module.scss";
 import { Reveal } from "@/components/common/Reveal";
+import { LINKS } from "@/constants/links";
 
 const features = [
   { value: "52 TOPS", label: "AI Processing" },
@@ -39,7 +40,7 @@ export function Hero() {
               Explore Features
             </a>
             <a
-              href="https://shop.luxonis.com/products/oak-4-d"
+              href={LINKS.shopProduct}
               className={styles.btnSecondary}
               target="_blank"
               rel="noopener noreferrer"

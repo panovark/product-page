@@ -1,9 +1,10 @@
 import styles from "./Footer.module.scss";
+import { LINKS } from "@/constants/links";
 
 const links = [
-  { label: "Documentation", href: "https://docs.luxonis.com" },
-  { label: "Shop", href: "https://shop.luxonis.com" },
-  { label: "GitHub", href: "https://github.com/luxonis" },
+  { label: "Documentation", href: LINKS.docs },
+  { label: "Shop", href: LINKS.shop },
+  { label: "GitHub", href: LINKS.github },
 ];
 
 export function Footer() {
