@@ -1,40 +1,33 @@
 @use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
 
 .getStarted {
   padding: 120px 0;
   background: linear-gradient(180deg, $bg-dark 0%, $bg-secondary 100%);
   text-align: center;
-  scroll-margin-top: 96px;
+  @include scroll-offset;
 
-  @media (max-width: $breakpoint-tablet) {
-    scroll-margin-top: 78px;
-  }
-
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-sm) {
     padding: 96px 0 80px;
   }
 }
 
 .container {
-  max-width: $container-max;
-  margin: 0 auto;
-  padding: 0 $spacing-lg;
+  @include container;
 }
 
 .title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  margin: 0 0 $spacing-md;
+  @include section-title;
+  margin-bottom: $spacing-md;
 }
 
 .subtitle {
-  font-size: 1.125rem;
-  color: $text-secondary;
+  @include section-subtitle;
   max-width: 600px;
   margin: 0 auto $spacing-xl;
   line-height: 1.7;
 
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-sm) {
     font-size: 1rem;
     line-height: 1.6;
   }
@@ -48,41 +41,22 @@
 }
 
 .btnPrimary {
+  @include btn-primary;
   padding: $spacing-md $spacing-xl;
-  background: linear-gradient(135deg, $primary 0%, $primary-light 100%);
-  color: $text-primary;
-  font-weight: 600;
   font-size: 1.1rem;
-  border-radius: $radius;
-  transition: all $transition;
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba($primary, 0.4);
-  }
-
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-sm) {
     font-size: 1rem;
     padding: $spacing-sm $spacing-lg;
   }
 }
 
 .btnSecondary {
+  @include btn-secondary;
   padding: $spacing-md $spacing-xl;
-  background: transparent;
-  color: $text-primary;
-  font-weight: 600;
   font-size: 1.1rem;
-  border: 1px solid $glass-border;
-  border-radius: $radius;
-  transition: all $transition;
 
-  &:hover {
-    background: $glass-bg;
-    border-color: $primary-light;
-  }
-
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-sm) {
     font-size: 1rem;
     padding: $spacing-sm $spacing-lg;
   }

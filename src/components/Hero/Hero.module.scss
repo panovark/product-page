@@ -1,4 +1,5 @@
 @use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
 
 .hero {
   min-height: 100vh;
@@ -12,16 +13,14 @@
     $bg-dark 100%
   );
 
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-sm) {
     padding: 100px 0 20px;
     align-items: flex-start;
   }
 }
 
 .container {
-  max-width: $container-max;
-  margin: 0 auto;
-  padding: 0 $spacing-lg;
+  @include container;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: $spacing-xl;
@@ -32,7 +31,7 @@
     text-align: center;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-sm) {
     padding: 0 $spacing-md;
     gap: $spacing-lg;
   }
@@ -43,7 +42,7 @@
   flex-direction: column;
   gap: $spacing-lg;
 
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-sm) {
     gap: 12px;
   }
 }
@@ -73,7 +72,7 @@
     margin: 0 auto;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-sm) {
     display: none;
   }
 }
@@ -96,7 +95,7 @@
   border: 1px solid $glass-border;
   border-radius: $radius;
 
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-sm) {
     padding: 8px 12px;
   }
 }
@@ -106,7 +105,7 @@
   font-weight: 700;
   color: $accent-cyan;
 
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-sm) {
     font-size: 1.1rem;
   }
 }
@@ -117,7 +116,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
 
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-sm) {
     font-size: 0.72rem;
   }
 }
@@ -130,7 +129,7 @@
     justify-content: center;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-sm) {
     flex-wrap: wrap;
     justify-content: center;
     gap: $spacing-sm;
@@ -138,19 +137,10 @@
 }
 
 .btnPrimary {
+  @include btn-primary;
   padding: $spacing-md $spacing-lg;
-  background: linear-gradient(135deg, $primary 0%, $primary-light 100%);
-  color: $text-primary;
-  font-weight: 600;
-  border-radius: $radius;
-  transition: all $transition;
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba($primary, 0.4);
-  }
-
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-sm) {
     padding: $spacing-sm $spacing-md;
     font-size: 0.95rem;
     min-width: 180px;
@@ -158,20 +148,10 @@
 }
 
 .btnSecondary {
+  @include btn-secondary;
   padding: $spacing-md $spacing-lg;
-  background: transparent;
-  color: $text-primary;
-  font-weight: 600;
-  border: 1px solid $glass-border;
-  border-radius: $radius;
-  transition: all $transition;
 
-  &:hover {
-    background: $glass-bg;
-    border-color: $primary-light;
-  }
-
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-sm) {
     padding: $spacing-sm $spacing-md;
     font-size: 0.95rem;
     min-width: 180px;
@@ -195,12 +175,12 @@
   transition: transform $transition;
   will-change: transform;
 
-  @media (max-width: 768px) {
+  @media (max-width: $breakpoint-mobile) {
     max-height: clamp(220px, 45vh, 340px);
     object-fit: contain;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-sm) {
     max-height: 300px;
   }
 }

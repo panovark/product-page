@@ -1,0 +1,84 @@
+@use "./variables" as *;
+
+// ======================
+// Layout Mixins
+// ======================
+
+@mixin container($padding: $spacing-lg) {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $padding;
+}
+
+// ======================
+// Typography Mixins
+// ======================
+
+@mixin section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 $spacing-sm;
+}
+
+@mixin section-subtitle {
+  font-size: 1.125rem;
+  color: $text-secondary;
+  text-align: center;
+  margin: 0 0 $spacing-xl;
+}
+
+// ======================
+// Button Mixins
+// ======================
+
+@mixin btn-base {
+  font-weight: 600;
+  border-radius: $radius;
+  transition: all $transition;
+}
+
+@mixin btn-primary {
+  @include btn-base;
+  background: linear-gradient(135deg, $primary 0%, $primary-light 100%);
+  color: $text-primary;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba($primary, 0.4);
+  }
+}
+
+@mixin btn-secondary {
+  @include btn-base;
+  background: transparent;
+  color: $text-primary;
+  border: 1px solid $glass-border;
+
+  &:hover {
+    background: $glass-bg;
+    border-color: $primary-light;
+  }
+}
+
+// ======================
+// Glass Effect Mixins
+// ======================
+
+@mixin glass-panel {
+  background: $glass-bg;
+  border: 1px solid $glass-border;
+  border-radius: $radius-lg;
+}
+
+// ======================
+// Section Mixins
+// ======================
+
+@mixin scroll-offset {
+  scroll-margin-top: $scroll-offset-desktop;
+
+  @media (max-width: $breakpoint-tablet) {
+    scroll-margin-top: $scroll-offset-tablet;
+  }
+}

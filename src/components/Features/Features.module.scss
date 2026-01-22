@@ -1,33 +1,22 @@
 @use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
 
 .features {
   padding: 100px 0;
   background: $bg-dark;
-  scroll-margin-top: 96px;
-
-  @media (max-width: $breakpoint-tablet) {
-    scroll-margin-top: 78px;
-  }
+  @include scroll-offset;
 }
 
 .container {
-  max-width: $container-max;
-  margin: 0 auto;
-  padding: 0 $spacing-lg;
+  @include container;
 }
 
 .title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  text-align: center;
-  margin: 0 0 $spacing-sm;
+  @include section-title;
 }
 
 .subtitle {
-  font-size: 1.125rem;
-  color: $text-secondary;
-  text-align: center;
-  margin: 0 0 $spacing-xl;
+  @include section-subtitle;
 }
 
 .grid {
@@ -45,10 +34,8 @@
 }
 
 .card {
+  @include glass-panel;
   padding: $spacing-lg;
-  background: $glass-bg;
-  border: 1px solid $glass-border;
-  border-radius: $radius-lg;
   transition: all $transition;
 
   &:hover {
