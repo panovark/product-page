@@ -1,5 +1,6 @@
 import { useState } from "react";
-import * as Dialog from "@radix-ui/react-dialog";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 import clsx from "clsx";
 import styles from "./Gallery.module.scss";
 import { Section } from "@/components/common/Section";
@@ -14,15 +15,7 @@ const images = [
 
 export function Gallery() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const total = images.length;
-
-  const goPrev = () => {
-    setActiveIndex((index) => (index - 1 + total) % total);
-  };
-
-  const goNext = () => {
-    setActiveIndex((index) => (index + 1) % total);
-  };
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Section
@@ -31,86 +24,50 @@ export function Gallery() {
       subtitle="Explore the OAK 4 D from every angle"
       background="dark"
     >
-      <Dialog.Root>
-        <Reveal>
-          <Dialog.Trigger asChild>
-            <button
-              className={styles.viewer}
-              type="button"
-              aria-label="Open full image"
-            >
-              <img
-                src={images[activeIndex].src}
-                alt={images[activeIndex].alt}
-                className={styles.mainImage}
-              />
-            </button>
-          </Dialog.Trigger>
-        </Reveal>
+      <Reveal>
+        <button
+          className={styles.viewer}
+          type="button"
+          onClick={() => setIsOpen(true)}
+          aria-label="Open full image"
+        >
+          <img
+            src={images[activeIndex].src}
+            alt={images[activeIndex].alt}
+            className={styles.mainImage}
+          />
+        </button>
+      </Reveal>
 
-        <Reveal className={styles.thumbnails} delay={0.1}>
-          {images.map((image, index) => (
-            <button
-              key={image.src}
-              className={clsx(
-                styles.thumbnail,
-                index === activeIndex && styles.active,
-              )}
-              onClick={() => setActiveIndex(index)}
-              aria-label={`View ${image.alt}`}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className={styles.thumbnailImg}
-              />
-            </button>
-          ))}
-        </Reveal>
-
-        <Dialog.Portal>
-          <Dialog.Overlay className={styles.lightboxOverlay} />
-          <Dialog.Content
-            className={styles.lightboxContent}
-            aria-label="Image preview"
-            onKeyDown={(event) => {
-              if (event.key === "ArrowLeft") {
-                event.preventDefault();
-                goPrev();
-              }
-              if (event.key === "ArrowRight") {
-                event.preventDefault();
-                goNext();
-              }
-            }}
+      <Reveal className={styles.thumbnails} delay={0.1}>
+        {images.map((image, index) => (
+          <button
+            key={image.src}
+            className={clsx(
+              styles.thumbnail,
+              index === activeIndex && styles.active,
+            )}
+            onClick={() => setActiveIndex(index)}
+            aria-label={`View ${image.alt}`}
           >
             <img
-              src={images[activeIndex].src}
-              alt={images[activeIndex].alt}
-              className={styles.lightboxImage}
+              src={image.src}
+              alt={image.alt}
+              className={styles.thumbnailImg}
             />
-            <button
-              type="button"
-              className={styles.lightboxPrev}
-              onClick={goPrev}
-              aria-label="Previous image"
-            >
-              ←
-            </button>
-            <button
-              type="button"
-              className={styles.lightboxNext}
-              onClick={goNext}
-              aria-label="Next image"
-            >
-              →
-            </button>
-            <Dialog.Close className={styles.lightboxClose} aria-label="Close">
-              ✕
-            </Dialog.Close>
-          </Dialog.Content>
-        </Dialog.Portal>
-      </Dialog.Root>
+          </button>
+        ))}
+      </Reveal>
+
+      <Lightbox
+        open={isOpen}
+        close={() => setIsOpen(false)}
+        index={activeIndex}
+        slides={images}
+        on={{ view: ({ index }) => setActiveIndex(index) }}
+        carousel={{ finite: true }}
+        controller={{ closeOnBackdropClick: true }}
+      />
     </Section>
   );
 }
