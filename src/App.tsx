@@ -4,6 +4,7 @@ import { Features } from "@/components/Features";
 import { Specifications } from "@/components/Specifications";
 import { Gallery } from "@/components/Gallery";
 import { GetStarted } from "@/components/GetStarted";
+import { Footer } from "@/components/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Gallery />
         <GetStarted />
       </main>
+      <Footer />
     </div>
   );
 }

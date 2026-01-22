@@ -1,0 +1,58 @@
+@use "@/styles/variables" as *;
+
+.footer {
+  padding: $spacing-xl 0;
+  background: $bg-secondary;
+  border-top: 1px solid $glass-border;
+}
+
+.container {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.logo {
+  height: 32px;
+  width: auto;
+}
+
+.tagline {
+  color: $text-secondary;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  gap: $spacing-lg;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.link {
+  color: $text-secondary;
+  font-size: 0.95rem;
+  transition: color $transition;
+
+  &:hover {
+    color: $text-primary;
+  }
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.85rem;
+  margin: 0;
+}
