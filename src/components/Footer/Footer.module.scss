@@ -45,8 +45,10 @@
   font-size: 0.95rem;
   transition: color $transition;
 
-  &:hover {
-    color: $text-primary;
+  @media (hover: hover) {
+    &:hover {
+      color: $text-primary;
+    }
   }
 }
 

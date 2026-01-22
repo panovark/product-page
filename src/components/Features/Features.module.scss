@@ -52,10 +52,12 @@
     scroll-snap-align: start;
   }
 
-  &:hover {
-    transform: translateY(-4px);
-    border-color: $primary-light;
-    box-shadow: 0 20px 40px rgba($primary, 0.15);
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-4px);
+      border-color: $primary-light;
+      box-shadow: 0 20px 40px rgba($primary, 0.15);
+    }
   }
 }
 

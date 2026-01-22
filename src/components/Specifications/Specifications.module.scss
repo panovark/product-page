@@ -36,8 +36,10 @@
     border-bottom: none;
   }
 
-  &:hover {
-    background: $glass-bg;
+  @media (hover: hover) {
+    &:hover {
+      background: $glass-bg;
+    }
   }
 
   @media (max-width: $breakpoint-mobile) {

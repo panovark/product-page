@@ -46,8 +46,10 @@
   font-size: 0.9rem;
   transition: color $transition;
 
-  &:hover {
-    color: $text-primary;
+  @media (hover: hover) {
+    &:hover {
+      color: $text-primary;
+    }
   }
 }
 
@@ -139,8 +141,10 @@
   padding: $spacing-sm 0;
   transition: color $transition;
 
-  &:hover {
-    color: $text-primary;
+  @media (hover: hover) {
+    &:hover {
+      color: $text-primary;
+    }
   }
 }
 
@@ -160,8 +164,10 @@
   justify-content: center;
   transition: color $transition;
 
-  &:hover {
-    color: $text-primary;
+  @media (hover: hover) {
+    &:hover {
+      color: $text-primary;
+    }
   }
 }
 
