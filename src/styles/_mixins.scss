@@ -1,19 +1,13 @@
 @use "./variables" as *;
 
-// ======================
 // Layout Mixins
-// ======================
-
 @mixin container($padding: $spacing-lg) {
   max-width: $container-max;
   margin: 0 auto;
   padding: 0 $padding;
 }
 
-// ======================
 // Typography Mixins
-// ======================
-
 @mixin section-title {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
@@ -28,10 +22,7 @@
   margin: 0 0 $spacing-xl;
 }
 
-// ======================
 // Button Mixins
-// ======================
-
 @mixin btn-base {
   font-weight: 600;
   border-radius: $radius;
@@ -61,20 +52,14 @@
   }
 }
 
-// ======================
 // Glass Effect Mixins
-// ======================
-
 @mixin glass-panel {
   background: $glass-bg;
   border: 1px solid $glass-border;
   border-radius: $radius-lg;
 }
 
-// ======================
 // Section Mixins
-// ======================
-
 @mixin scroll-offset {
   scroll-margin-top: $scroll-offset-desktop;
 
