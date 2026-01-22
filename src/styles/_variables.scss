@@ -23,11 +23,9 @@ $radius-lg: 16px;
 $transition: 0.3s ease;
 $container-max: 1200px;
 
-// Breakpoints
 $breakpoint-sm: 480px;
 $breakpoint-mobile: 768px;
 $breakpoint-tablet: 1024px;
 
-// Scroll offsets (for fixed header)
-$scroll-offset-desktop: 96px;
-$scroll-offset-tablet: 78px;
+$scroll-offset-desktop: 75px;
+$scroll-offset-tablet: 60px;

@@ -14,7 +14,7 @@
 
 .container {
   @include container;
-  padding: $spacing-md $spacing-lg;
+  padding: $spacing-sm $spacing-lg;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -43,6 +43,7 @@
 .navLink {
   color: $text-secondary;
   font-weight: 500;
+  font-size: 0.9rem;
   transition: color $transition;
 
   &:hover {
@@ -53,6 +54,7 @@
 // CTA Button
 .cta {
   @include btn-primary;
+  padding: $spacing-xs $spacing-md;
 
   @media (max-width: $breakpoint-mobile) {
     display: none;
