@@ -3,6 +3,11 @@
 .specifications {
   padding: 100px 0;
   background: $bg-secondary;
+  scroll-margin-top: 96px;
+
+  @media (max-width: $breakpoint-tablet) {
+    scroll-margin-top: 84px;
+  }
 }
 
 .container {

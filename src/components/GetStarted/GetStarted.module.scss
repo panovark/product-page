@@ -4,6 +4,11 @@
   padding: 120px 0;
   background: linear-gradient(180deg, $bg-dark 0%, $bg-secondary 100%);
   text-align: center;
+  scroll-margin-top: 96px;
+
+  @media (max-width: $breakpoint-tablet) {
+    scroll-margin-top: 84px;
+  }
 }
 
 .container {

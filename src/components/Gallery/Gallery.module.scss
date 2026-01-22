@@ -3,6 +3,11 @@
 .gallery {
   padding: 100px 0;
   background: $bg-dark;
+  scroll-margin-top: 96px;
+
+  @media (max-width: $breakpoint-tablet) {
+    scroll-margin-top: 84px;
+  }
 }
 
 .container {
