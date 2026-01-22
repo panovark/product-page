@@ -131,16 +131,16 @@
 
 .lightboxContent {
   position: fixed;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: $spacing-lg;
+  padding: 0;
   z-index: 301;
-
-  @media (max-width: 480px) {
-    padding: $spacing-md;
-  }
+  max-width: 96vw;
+  max-height: 90vh;
 }
 
 .lightboxImage {
@@ -167,7 +167,7 @@
   height: 52px;
   border: none;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.55);
   color: $text-primary;
   font-size: 1.4rem;
   cursor: pointer;
@@ -177,7 +177,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 
   &:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.7);
   }
 
   &:focus-visible {
@@ -189,31 +189,34 @@
     width: 44px;
     height: 44px;
     font-size: 1.2rem;
-    background: rgba(0, 0, 0, 0.5);
-
-    &:hover {
-      background: rgba(0, 0, 0, 0.65);
-    }
   }
 }
 
 .lightboxPrev {
-  left: $spacing-lg;
+  left: 1.5rem;
+
+  @media (max-width: 480px) {
+    left: 0.75rem;
+  }
 }
 
 .lightboxNext {
-  right: $spacing-lg;
+  right: 1.5rem;
+
+  @media (max-width: 480px) {
+    right: 0.75rem;
+  }
 }
 
 .lightboxClose {
   position: absolute;
-  top: $spacing-lg;
-  right: $spacing-lg;
+  top: 1rem;
+  right: 1rem;
   width: 44px;
   height: 44px;
   border: none;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.55);
   color: $text-primary;
   font-size: 1.2rem;
   cursor: pointer;
@@ -222,7 +225,7 @@
   transition: background $transition;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(0, 0, 0, 0.7);
   }
 
   &:focus-visible {
