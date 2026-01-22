@@ -6,7 +6,7 @@
   scroll-margin-top: 96px;
 
   @media (max-width: $breakpoint-tablet) {
-    scroll-margin-top: 84px;
+    scroll-margin-top: 78px;
   }
 }
 
@@ -121,20 +121,77 @@
 .lightboxContent {
   position: fixed;
   inset: 0;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: $spacing-lg;
   z-index: 301;
+
+  @media (max-width: 480px) {
+    padding: $spacing-md;
+  }
 }
 
 .lightboxImage {
-  max-width: min(90vw, 1100px);
-  max-height: 80vh;
+  max-width: min(92vw, 1100px);
+  max-height: 78vh;
   object-fit: contain;
   border-radius: $radius-lg;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
   background: $bg-secondary;
   border: 1px solid $glass-border;
+
+  @media (max-width: 480px) {
+    max-width: 94vw;
+    max-height: 72vh;
+  }
+}
+
+.lightboxPrev,
+.lightboxNext {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: $text-primary;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background $transition;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $accent-cyan;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 480px) {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.5);
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.65);
+    }
+  }
+}
+
+.lightboxPrev {
+  left: $spacing-lg;
+}
+
+.lightboxNext {
+  right: $spacing-lg;
 }
 
 .lightboxClose {

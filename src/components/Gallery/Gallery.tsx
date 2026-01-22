@@ -8,11 +8,19 @@ const images = [
   { src: "/OAK_D_2.webp", alt: "OAK 4 D Side View" },
   { src: "/OAK_D_3.webp", alt: "OAK 4 D Angle View" },
   { src: "/OAK_D_4.webp", alt: "OAK 4 D Back View" },
-  { src: "/OAK_D_5.webp", alt: "OAK 4 D Perspective" },
 ];
 
 export function Gallery() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const total = images.length;
+
+  const goPrev = () => {
+    setActiveIndex((index) => (index - 1 + total) % total);
+  };
+
+  const goNext = () => {
+    setActiveIndex((index) => (index + 1) % total);
+  };
 
   return (
     <section className={styles.gallery} id="gallery">
@@ -61,12 +69,38 @@ export function Gallery() {
             <Dialog.Content
               className={styles.lightboxContent}
               aria-label="Image preview"
+              onKeyDown={(event) => {
+                if (event.key === "ArrowLeft") {
+                  event.preventDefault();
+                  goPrev();
+                }
+                if (event.key === "ArrowRight") {
+                  event.preventDefault();
+                  goNext();
+                }
+              }}
             >
               <img
                 src={images[activeIndex].src}
                 alt={images[activeIndex].alt}
                 className={styles.lightboxImage}
               />
+              <button
+                type="button"
+                className={styles.lightboxPrev}
+                onClick={goPrev}
+                aria-label="Previous image"
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                className={styles.lightboxNext}
+                onClick={goNext}
+                aria-label="Next image"
+              >
+                →
+              </button>
               <Dialog.Close className={styles.lightboxClose} aria-label="Close">
                 ✕
               </Dialog.Close>
