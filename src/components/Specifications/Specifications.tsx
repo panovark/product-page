@@ -1,4 +1,5 @@
 import styles from "./Specifications.module.scss";
+import { Reveal } from "@/components/common/Reveal";
 
 const specs = [
   { label: "Processor", value: "6-core ARM CPU (Qualcomm 8-series)" },
@@ -32,11 +33,13 @@ export function Specifications() {
         </p>
 
         <dl className={styles.list}>
-          {specs.map((spec) => (
-            <div key={spec.label} className={styles.row}>
-              <dt className={styles.term}>{spec.label}</dt>
-              <dd className={styles.definition}>{spec.value}</dd>
-            </div>
+          {specs.map((spec, index) => (
+            <Reveal key={spec.label} delay={index * 0.05}>
+              <div className={styles.row}>
+                <dt className={styles.term}>{spec.label}</dt>
+                <dd className={styles.definition}>{spec.value}</dd>
+              </div>
+            </Reveal>
           ))}
         </dl>
       </div>

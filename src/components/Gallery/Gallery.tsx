@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Gallery.module.scss";
+import { Reveal } from "@/components/common/Reveal";
 
 const images = [
   { src: "/OAK_D_1.webp", alt: "OAK 4 D Front View" },
@@ -18,15 +19,15 @@ export function Gallery() {
         <h2 className={styles.title}>Gallery</h2>
         <p className={styles.subtitle}>Explore the OAK 4 D from every angle</p>
 
-        <div className={styles.viewer}>
+        <Reveal className={styles.viewer}>
           <img
             src={images[activeIndex].src}
             alt={images[activeIndex].alt}
             className={styles.mainImage}
           />
-        </div>
+        </Reveal>
 
-        <div className={styles.thumbnails}>
+        <Reveal className={styles.thumbnails} delay={0.1}>
           {images.map((image, index) => (
             <button
               key={image.src}
@@ -42,7 +43,7 @@ export function Gallery() {
               />
             </button>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

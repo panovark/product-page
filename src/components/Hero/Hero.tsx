@@ -1,4 +1,5 @@
 import styles from "./Hero.module.scss";
+import { Reveal } from "@/components/common/Reveal";
 
 const features = [
   { value: "52 TOPS", label: "AI Processing" },
@@ -14,7 +15,7 @@ export function Hero() {
   return (
     <section className={styles.hero} id="hero">
       <div className={styles.container}>
-        <div className={styles.content}>
+        <Reveal className={styles.content}>
           <h1 className={styles.title}>
             OAK <span className={styles.highlight}>4</span> D
           </h1>
@@ -46,15 +47,15 @@ export function Hero() {
               Buy Now
             </a>
           </div>
-        </div>
+        </Reveal>
 
-        <div className={styles.imageWrapper}>
+        <Reveal className={styles.imageWrapper} delay={0.1}>
           <img
             src="/OAK_D_5.webp"
             alt="OAK 4 D Camera"
             className={styles.image}
           />
-        </div>
+        </Reveal>
       </div>
     </section>
   );
