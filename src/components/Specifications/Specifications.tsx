@@ -31,14 +31,14 @@ export function Specifications() {
           Detailed specifications for the OAK 4 D camera
         </p>
 
-        <div className={styles.table}>
+        <dl className={styles.list}>
           {specs.map((spec) => (
             <div key={spec.label} className={styles.row}>
-              <span className={styles.label}>{spec.label}</span>
-              <span className={styles.value}>{spec.value}</span>
+              <dt className={styles.term}>{spec.label}</dt>
+              <dd className={styles.definition}>{spec.value}</dd>
             </div>
           ))}
-        </div>
+        </dl>
       </div>
     </section>
   );

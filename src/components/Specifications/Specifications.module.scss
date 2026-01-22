@@ -25,7 +25,7 @@
   margin: 0 0 $spacing-xl;
 }
 
-.table {
+.list {
   max-width: 800px;
   margin: 0 auto;
   background: $glass-bg;
@@ -49,13 +49,14 @@
   }
 }
 
-.label {
+.term {
   color: $text-secondary;
   font-weight: 500;
 }
 
-.value {
+.definition {
   color: $text-primary;
   text-align: right;
   font-weight: 600;
+  margin: 0;
 }
