@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 import { Specifications } from "@/components/Specifications";
 import { Gallery } from "@/components/Gallery";
+import { GetStarted } from "@/components/GetStarted";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Features />
         <Specifications />
         <Gallery />
+        <GetStarted />
       </main>
     </div>
   );

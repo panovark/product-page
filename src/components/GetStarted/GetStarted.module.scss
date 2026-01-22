@@ -1,0 +1,65 @@
+@use "@/styles/variables" as *;
+
+.getStarted {
+  padding: 120px 0;
+  background: linear-gradient(180deg, $bg-dark 0%, $bg-secondary 100%);
+  text-align: center;
+}
+
+.container {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin: 0 0 $spacing-md;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: $text-secondary;
+  max-width: 600px;
+  margin: 0 auto $spacing-xl;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  padding: $spacing-md $spacing-xl;
+  background: linear-gradient(135deg, $primary 0%, $primary-light 100%);
+  color: $text-primary;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: $radius;
+  transition: all $transition;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba($primary, 0.4);
+  }
+}
+
+.btnSecondary {
+  padding: $spacing-md $spacing-xl;
+  background: transparent;
+  color: $text-primary;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: 1px solid $glass-border;
+  border-radius: $radius;
+  transition: all $transition;
+
+  &:hover {
+    background: $glass-bg;
+    border-color: $primary-light;
+  }
+}
