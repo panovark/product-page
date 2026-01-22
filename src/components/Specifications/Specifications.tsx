@@ -1,4 +1,5 @@
 import styles from "./Specifications.module.scss";
+import { Section } from "@/components/common/Section";
 import { Reveal } from "@/components/common/Reveal";
 
 const specs = [
@@ -25,24 +26,22 @@ const specs = [
 
 export function Specifications() {
   return (
-    <section className={styles.specifications} id="specs">
-      <div className={styles.container}>
-        <h2 className={styles.title}>Technical Specifications</h2>
-        <p className={styles.subtitle}>
-          Detailed specifications for the OAK 4 D camera
-        </p>
-
-        <dl className={styles.list}>
-          {specs.map((spec, index) => (
-            <Reveal key={spec.label} delay={index * 0.05}>
-              <div className={styles.row}>
-                <dt className={styles.term}>{spec.label}</dt>
-                <dd className={styles.definition}>{spec.value}</dd>
-              </div>
-            </Reveal>
-          ))}
-        </dl>
-      </div>
-    </section>
+    <Section
+      id="specs"
+      title="Technical Specifications"
+      subtitle="Detailed specifications for the OAK 4 D camera"
+      background="secondary"
+    >
+      <dl className={styles.list}>
+        {specs.map((spec, index) => (
+          <Reveal key={spec.label} delay={index * 0.05}>
+            <div className={styles.row}>
+              <dt className={styles.term}>{spec.label}</dt>
+              <dd className={styles.definition}>{spec.value}</dd>
+            </div>
+          </Reveal>
+        ))}
+      </dl>
+    </Section>
   );
 }

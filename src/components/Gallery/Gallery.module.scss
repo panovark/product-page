@@ -1,24 +1,6 @@
 @use "@/styles/variables" as *;
 @use "@/styles/mixins" as *;
 
-.gallery {
-  padding: $spacing-section 0;
-  background: $bg-dark;
-  @include scroll-offset;
-}
-
-.container {
-  @include container;
-}
-
-.title {
-  @include section-title;
-}
-
-.subtitle {
-  @include section-subtitle;
-}
-
 .viewer {
   all: unset;
   max-width: 700px;

@@ -1,0 +1,10 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.primary {
+  @include btn-primary;
+}
+
+.secondary {
+  @include btn-secondary;
+}

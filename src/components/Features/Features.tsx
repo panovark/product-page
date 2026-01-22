@@ -1,4 +1,5 @@
 import styles from "./Features.module.scss";
+import { Section } from "@/components/common/Section";
 import { Reveal } from "@/components/common/Reveal";
 
 const features = [
@@ -36,24 +37,22 @@ const features = [
 
 export function Features() {
   return (
-    <section className={styles.features} id="features">
-      <div className={styles.container}>
-        <h2 className={styles.title}>Key Features</h2>
-        <p className={styles.subtitle}>
-          Everything you need for advanced computer vision and edge AI
-        </p>
-
-        <Reveal>
-          <div className={styles.grid}>
-            {features.map((feature) => (
-              <div key={feature.title} className={styles.card}>
-                <h3 className={styles.cardTitle}>{feature.title}</h3>
-                <p className={styles.cardDescription}>{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </div>
-    </section>
+    <Section
+      id="features"
+      title="Key Features"
+      subtitle="Everything you need for advanced computer vision and edge AI"
+      background="dark"
+    >
+      <Reveal>
+        <div className={styles.grid}>
+          {features.map((feature) => (
+            <div key={feature.title} className={styles.card}>
+              <h3 className={styles.cardTitle}>{feature.title}</h3>
+              <p className={styles.cardDescription}>{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </Reveal>
+    </Section>
   );
 }

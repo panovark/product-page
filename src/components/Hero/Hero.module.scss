@@ -136,14 +136,6 @@
   }
 }
 
-.btnPrimary {
-  @include btn-primary;
-}
-
-.btnSecondary {
-  @include btn-secondary;
-}
-
 .imageWrapper {
   display: flex;
   justify-content: center;

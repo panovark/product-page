@@ -1,32 +1,7 @@
 @use "@/styles/variables" as *;
-@use "@/styles/mixins" as *;
 
 .getStarted {
-  padding: $spacing-section 0;
-  background: linear-gradient(180deg, $bg-dark 0%, $bg-secondary 100%);
   text-align: center;
-  @include scroll-offset;
-}
-
-.container {
-  @include container;
-}
-
-.title {
-  @include section-title;
-  margin-bottom: $spacing-md;
-}
-
-.subtitle {
-  @include section-subtitle;
-  max-width: 600px;
-  margin: 0 auto $spacing-xl;
-  line-height: 1.7;
-
-  @media (max-width: $breakpoint-sm) {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
 }
 
 .actions {
@@ -34,12 +9,4 @@
   justify-content: center;
   gap: $spacing-md;
   flex-wrap: wrap;
-}
-
-.btnPrimary {
-  @include btn-primary;
-}
-
-.btnSecondary {
-  @include btn-secondary;
 }

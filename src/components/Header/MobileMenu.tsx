@@ -2,11 +2,7 @@ import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { motion, AnimatePresence } from "motion/react";
 import styles from "./Header.module.scss";
-
-interface NavLink {
-  label: string;
-  href: string;
-}
+import type { NavLink } from "@/types";
 
 interface MobileMenuProps {
   links: NavLink[];

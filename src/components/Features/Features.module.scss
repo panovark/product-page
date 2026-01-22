@@ -1,28 +1,6 @@
 @use "@/styles/variables" as *;
 @use "@/styles/mixins" as *;
 
-.features {
-  padding: $spacing-section 0;
-  background: $bg-dark;
-  @include scroll-offset;
-}
-
-.container {
-  @include container;
-
-  @media (max-width: $breakpoint-mobile) {
-    padding: 0;
-  }
-}
-
-.title {
-  @include section-title;
-}
-
-.subtitle {
-  @include section-subtitle;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -37,6 +15,7 @@
     grid-auto-flow: column;
     grid-auto-columns: minmax(260px, 100%);
     overflow-x: scroll;
+    margin: 0 (-$spacing-lg);
     padding: 0 $spacing-sm $spacing-xs;
     scroll-padding-inline: $spacing-sm;
     gap: $spacing-sm;

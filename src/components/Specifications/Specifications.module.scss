@@ -1,24 +1,6 @@
 @use "@/styles/variables" as *;
 @use "@/styles/mixins" as *;
 
-.specifications {
-  padding: $spacing-section 0;
-  background: $bg-secondary;
-  @include scroll-offset;
-}
-
-.container {
-  @include container;
-}
-
-.title {
-  @include section-title;
-}
-
-.subtitle {
-  @include section-subtitle;
-}
-
 .list {
   @include glass-panel;
   max-width: 800px;

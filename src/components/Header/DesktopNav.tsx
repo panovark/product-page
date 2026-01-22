@@ -1,9 +1,5 @@
 import styles from "./Header.module.scss";
-
-interface NavLink {
-  label: string;
-  href: string;
-}
+import type { NavLink } from "@/types";
 
 interface DesktopNavProps {
   links: NavLink[];

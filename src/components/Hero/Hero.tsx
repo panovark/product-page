@@ -1,5 +1,6 @@
 import styles from "./Hero.module.scss";
 import { Reveal } from "@/components/common/Reveal";
+import { Button } from "@/components/common/Button";
 import { LINKS } from "@/constants/links";
 
 const features = [
@@ -36,17 +37,10 @@ export function Hero() {
           </div>
 
           <div className={styles.actions}>
-            <a href="#features" className={styles.btnPrimary}>
-              Explore Features
-            </a>
-            <a
-              href={LINKS.shopProduct}
-              className={styles.btnSecondary}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Button href="#features">Explore Features</Button>
+            <Button variant="secondary" href={LINKS.shopProduct} external>
               Buy Now
-            </a>
+            </Button>
           </div>
         </Reveal>
 
