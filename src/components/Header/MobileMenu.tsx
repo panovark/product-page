@@ -1,6 +1,7 @@
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { motion, AnimatePresence } from "motion/react";
+import { X } from "lucide-react";
 import styles from "./Header.module.scss";
 import type { NavLink } from "@/types";
 
@@ -64,7 +65,7 @@ export function MobileMenu({ links }: MobileMenuProps) {
                     className={styles.closeButton}
                     aria-label="Close menu"
                   >
-                    ✕
+                    <X size={20} />
                   </button>
                 </Dialog.Close>
               </motion.nav>
