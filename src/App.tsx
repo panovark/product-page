@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 import { Specifications } from "@/components/Specifications";
+import { Gallery } from "@/components/Gallery";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Hero />
         <Features />
         <Specifications />
+        <Gallery />
       </main>
     </div>
   );
