@@ -192,6 +192,8 @@
   max-width: 100%;
   height: auto;
   filter: drop-shadow(0 20px 60px rgba($accent-cyan, 0.2));
+  transition: transform $transition;
+  will-change: transform;
 
   @media (max-width: 768px) {
     max-height: clamp(220px, 45vh, 340px);
@@ -201,4 +203,8 @@
   @media (max-width: 480px) {
     max-height: clamp(200px, 50vh, 280px);
   }
+}
+
+.imageWrapper:hover .image {
+  transform: translateY(-6px) scale(1.02);
 }
