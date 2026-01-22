@@ -40,12 +40,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $spacing-md;
+  }
+
+  @media (max-width: 480px) {
+    padding: $spacing-sm;
+  }
 }
 
 .mainImage {
   max-width: 100%;
   max-height: 400px;
   object-fit: contain;
+
+  @media (max-width: $breakpoint-mobile) {
+    max-height: 320px;
+  }
+
+  @media (max-width: 480px) {
+    max-height: clamp(200px, 50vh, 260px);
+  }
 }
 
 .thumbnails {
@@ -67,6 +83,18 @@
 
   &:hover {
     border-color: $primary-light;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 72px;
+    height: 72px;
+    padding: 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 64px;
+    height: 64px;
+    padding: 0.4rem;
   }
 }
 
