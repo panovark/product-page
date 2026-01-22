@@ -9,6 +9,10 @@
   @media (max-width: $breakpoint-tablet) {
     scroll-margin-top: 84px;
   }
+
+  @media (max-width: 480px) {
+    padding: 96px 0 80px;
+  }
 }
 
 .container {
