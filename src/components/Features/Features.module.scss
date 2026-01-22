@@ -8,7 +8,9 @@
 }
 
 .container {
-  @include container;
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0 $spacing-sm;
+  }
 }
 
 .title {
@@ -29,7 +31,15 @@
   }
 
   @media (max-width: $breakpoint-mobile) {
-    grid-template-columns: 1fr;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(260px, 100%);
+    overflow-x: scroll;
+    padding: 0 0 $spacing-sm;
+    scroll-padding-inline: $spacing-xs;
+    gap: $spacing-sm;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -37,6 +47,10 @@
   @include glass-panel;
   padding: $spacing-lg;
   transition: all $transition;
+
+  @media (max-width: $breakpoint-mobile) {
+    scroll-snap-align: start;
+  }
 
   &:hover {
     transform: translateY(-4px);

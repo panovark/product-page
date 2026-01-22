@@ -43,16 +43,16 @@ export function Features() {
           Everything you need for advanced computer vision and edge AI
         </p>
 
-        <div className={styles.grid}>
-          {features.map((feature, index) => (
-            <Reveal key={feature.title} delay={index * 0.08}>
-              <div className={styles.card}>
+        <Reveal>
+          <div className={styles.grid}>
+            {features.map((feature) => (
+              <div key={feature.title} className={styles.card}>
                 <h3 className={styles.cardTitle}>{feature.title}</h3>
                 <p className={styles.cardDescription}>{feature.description}</p>
               </div>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );
