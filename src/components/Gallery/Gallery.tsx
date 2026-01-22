@@ -1,4 +1,5 @@
 import { useState } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
 import styles from "./Gallery.module.scss";
 import { Reveal } from "@/components/common/Reveal";
 
@@ -19,31 +20,59 @@ export function Gallery() {
         <h2 className={styles.title}>Gallery</h2>
         <p className={styles.subtitle}>Explore the OAK 4 D from every angle</p>
 
-        <Reveal className={styles.viewer}>
-          <img
-            src={images[activeIndex].src}
-            alt={images[activeIndex].alt}
-            className={styles.mainImage}
-          />
-        </Reveal>
+        <Dialog.Root>
+          <Reveal>
+            <Dialog.Trigger asChild>
+              <button
+                className={styles.viewer}
+                type="button"
+                aria-label="Open full image"
+              >
+                <img
+                  src={images[activeIndex].src}
+                  alt={images[activeIndex].alt}
+                  className={styles.mainImage}
+                />
+              </button>
+            </Dialog.Trigger>
+          </Reveal>
 
-        <Reveal className={styles.thumbnails} delay={0.1}>
-          {images.map((image, index) => (
-            <button
-              key={image.src}
-              className={`${styles.thumbnail} ${
-                index === activeIndex ? styles.active : ""
-              }`}
-              onClick={() => setActiveIndex(index)}
+          <Reveal className={styles.thumbnails} delay={0.1}>
+            {images.map((image, index) => (
+              <button
+                key={image.src}
+                className={`${styles.thumbnail} ${
+                  index === activeIndex ? styles.active : ""
+                }`}
+                onClick={() => setActiveIndex(index)}
+                aria-label={`View ${image.alt}`}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className={styles.thumbnailImg}
+                />
+              </button>
+            ))}
+          </Reveal>
+
+          <Dialog.Portal>
+            <Dialog.Overlay className={styles.lightboxOverlay} />
+            <Dialog.Content
+              className={styles.lightboxContent}
+              aria-label="Image preview"
             >
               <img
-                src={image.src}
-                alt={image.alt}
-                className={styles.thumbnailImg}
+                src={images[activeIndex].src}
+                alt={images[activeIndex].alt}
+                className={styles.lightboxImage}
               />
-            </button>
-          ))}
-        </Reveal>
+              <Dialog.Close className={styles.lightboxClose} aria-label="Close">
+                ✕
+              </Dialog.Close>
+            </Dialog.Content>
+          </Dialog.Portal>
+        </Dialog.Root>
       </div>
     </section>
   );
