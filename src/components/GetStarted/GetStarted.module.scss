@@ -2,14 +2,10 @@
 @use "@/styles/mixins" as *;
 
 .getStarted {
-  padding: 120px 0;
+  padding: $spacing-section 0;
   background: linear-gradient(180deg, $bg-dark 0%, $bg-secondary 100%);
   text-align: center;
   @include scroll-offset;
-
-  @media (max-width: $breakpoint-sm) {
-    padding: 96px 0 80px;
-  }
 }
 
 .container {
@@ -42,22 +38,8 @@
 
 .btnPrimary {
   @include btn-primary;
-  padding: $spacing-md $spacing-xl;
-  font-size: 1.1rem;
-
-  @media (max-width: $breakpoint-sm) {
-    font-size: 1rem;
-    padding: $spacing-sm $spacing-lg;
-  }
 }
 
 .btnSecondary {
   @include btn-secondary;
-  padding: $spacing-md $spacing-xl;
-  font-size: 1.1rem;
-
-  @media (max-width: $breakpoint-sm) {
-    font-size: 1rem;
-    padding: $spacing-sm $spacing-lg;
-  }
 }

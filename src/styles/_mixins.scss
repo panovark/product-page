@@ -25,8 +25,15 @@
 // Button Mixins
 @mixin btn-base {
   font-weight: 600;
+  font-size: 1rem;
   border-radius: $radius;
   transition: all $transition;
+  padding: $spacing-md $spacing-lg;
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: 0.95rem;
+    padding: $spacing-sm $spacing-md;
+  }
 }
 
 @mixin btn-primary {

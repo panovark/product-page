@@ -2,7 +2,7 @@
 @use "@/styles/mixins" as *;
 
 .features {
-  padding: 100px 0;
+  padding: $spacing-section 0;
   background: $bg-dark;
   @include scroll-offset;
 }

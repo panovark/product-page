@@ -43,7 +43,7 @@
   gap: $spacing-lg;
 
   @media (max-width: $breakpoint-sm) {
-    gap: 12px;
+    gap: $spacing-sm;
   }
 }
 
@@ -96,7 +96,7 @@
   border-radius: $radius;
 
   @media (max-width: $breakpoint-sm) {
-    padding: 8px 12px;
+    padding: $spacing-xs $spacing-sm;
   }
 }
 
@@ -106,7 +106,7 @@
   color: $accent-cyan;
 
   @media (max-width: $breakpoint-sm) {
-    font-size: 1.1rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -117,7 +117,7 @@
   letter-spacing: 0.05em;
 
   @media (max-width: $breakpoint-sm) {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -138,24 +138,10 @@
 
 .btnPrimary {
   @include btn-primary;
-  padding: $spacing-md $spacing-lg;
-
-  @media (max-width: $breakpoint-sm) {
-    padding: $spacing-sm $spacing-md;
-    font-size: 0.95rem;
-    min-width: 180px;
-  }
 }
 
 .btnSecondary {
   @include btn-secondary;
-  padding: $spacing-md $spacing-lg;
-
-  @media (max-width: $breakpoint-sm) {
-    padding: $spacing-sm $spacing-md;
-    font-size: 0.95rem;
-    min-width: 180px;
-  }
 }
 
 .imageWrapper {

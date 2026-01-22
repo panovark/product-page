@@ -2,7 +2,7 @@
 @use "@/styles/mixins" as *;
 
 .specifications {
-  padding: 100px 0;
+  padding: $spacing-section 0;
   background: $bg-secondary;
   @include scroll-offset;
 }
@@ -37,7 +37,7 @@
   }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.02);
+    background: $glass-bg;
   }
 
   @media (max-width: $breakpoint-mobile) {
@@ -51,12 +51,14 @@
 .term {
   color: $text-secondary;
   font-weight: 500;
+  font-size: 0.95rem;
 }
 
 .definition {
   color: $text-primary;
   text-align: right;
   font-weight: 600;
+  font-size: 1rem;
   margin: 0;
 
   @media (max-width: $breakpoint-mobile) {
