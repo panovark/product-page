@@ -11,6 +11,10 @@
     $bg-secondary 50%,
     $bg-dark 100%
   );
+
+  @media (max-width: 480px) {
+    padding: 100px 0 60px;
+  }
 }
 
 .container {
@@ -26,12 +30,21 @@
     grid-template-columns: 1fr;
     text-align: center;
   }
+
+  @media (max-width: 480px) {
+    padding: 0 $spacing-md;
+    gap: $spacing-lg;
+  }
 }
 
 .content {
   display: flex;
   flex-direction: column;
   gap: $spacing-lg;
+
+  @media (max-width: 480px) {
+    gap: $spacing-md;
+  }
 }
 
 .title {
@@ -58,6 +71,11 @@
   @media (max-width: $breakpoint-tablet) {
     margin: 0 auto;
   }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
 }
 
 .features {
@@ -77,12 +95,20 @@
   background: $glass-bg;
   border: 1px solid $glass-border;
   border-radius: $radius;
+
+  @media (max-width: 480px) {
+    padding: 8px 12px;
+  }
 }
 
 .value {
   font-size: 1.25rem;
   font-weight: 700;
   color: $accent-cyan;
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
 }
 
 .label {
@@ -90,6 +116,10 @@
   color: $text-secondary;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+
+  @media (max-width: 480px) {
+    font-size: 0.72rem;
+  }
 }
 
 .actions {
@@ -98,6 +128,12 @@
 
   @media (max-width: $breakpoint-tablet) {
     justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-sm;
   }
 }
 
@@ -113,6 +149,12 @@
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba($primary, 0.4);
   }
+
+  @media (max-width: 480px) {
+    padding: $spacing-sm $spacing-md;
+    font-size: 0.95rem;
+    min-width: 180px;
+  }
 }
 
 .btnSecondary {
@@ -127,6 +169,12 @@
   &:hover {
     background: $glass-bg;
     border-color: $primary-light;
+  }
+
+  @media (max-width: 480px) {
+    padding: $spacing-sm $spacing-md;
+    font-size: 0.95rem;
+    min-width: 180px;
   }
 }
 
@@ -144,4 +192,13 @@
   max-width: 100%;
   height: auto;
   filter: drop-shadow(0 20px 60px rgba($accent-cyan, 0.2));
+
+  @media (max-width: 768px) {
+    max-height: clamp(220px, 45vh, 340px);
+    object-fit: contain;
+  }
+
+  @media (max-width: 480px) {
+    max-height: clamp(200px, 50vh, 280px);
+  }
 }
