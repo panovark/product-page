@@ -41,10 +41,10 @@ export function MobileMenu({ links }: MobileMenuProps) {
             <Dialog.Content asChild forceMount>
               <motion.nav
                 className={styles.mobileMenu}
-                initial={{ x: "100%" }}
-                animate={{ x: 0 }}
-                exit={{ x: "100%" }}
-                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                initial={{ x: 50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: 50, opacity: 0 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
               >
                 <Dialog.Title className={styles.menuTitle}>
                   Navigation
