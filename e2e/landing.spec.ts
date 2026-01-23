@@ -33,10 +33,10 @@ test.describe("Landing Page", () => {
     await page.locator("#gallery").scrollIntoViewIfNeeded();
     await page.click('[class*="viewer"]');
 
-    const lightbox = page.locator('[class*="lightboxContent"]');
+    const lightbox = page.locator(".yarl__root");
     await expect(lightbox).toBeVisible();
 
-    await page.click('[class*="lightboxClose"]');
+    await page.keyboard.press("Escape");
     await expect(lightbox).not.toBeVisible();
   });
 
