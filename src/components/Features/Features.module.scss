@@ -11,15 +11,12 @@
   }
 
   @media (max-width: $breakpoint-mobile) {
-    grid-template-columns: none;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(260px, 100%);
-    overflow-x: scroll;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: $spacing-sm;
     margin: 0 (-$spacing-lg);
     padding: 0 $spacing-sm $spacing-xs;
-    scroll-padding-inline: $spacing-sm;
-    gap: $spacing-sm;
-    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
   }
 }
@@ -30,7 +27,8 @@
   transition: all $transition;
 
   @media (max-width: $breakpoint-mobile) {
-    scroll-snap-align: start;
+    flex: 0 0 80%;
+    scroll-snap-align: center;
   }
 
   @media (hover: hover) {
