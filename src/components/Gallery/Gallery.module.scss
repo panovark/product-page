@@ -60,6 +60,10 @@
   justify-content: center;
   gap: $spacing-md;
   flex-wrap: wrap;
+
+  @media (max-width: $breakpoint-mobile) {
+    gap: $spacing-xs;
+  }
 }
 
 .thumbnail {
