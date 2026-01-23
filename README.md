@@ -11,17 +11,27 @@ This project showcases a single-page marketing site with:
 - Vite for fast development and builds
 - SCSS Modules with shared variables and mixins
 - Motion for scroll-reveal animations
-- Radix UI Dialog for the gallery lightbox
+- Radix UI Dialog for accessible modals
+- yet-another-react-lightbox for gallery
 - Playwright for end-to-end tests
 
 ## 🏗️ Project Structure
 
 ```
 product-page/
-├── public/                 # Static assets
+├── public/                 # Static assets (images, logo)
 ├── src/
-│   ├── components/         # UI sections and shared pieces
+│   ├── components/
+│   │   ├── common/         # Reusable: Button, Section, Reveal
+│   │   ├── Header/         # Navigation + MobileMenu
+│   │   ├── Hero/           # Main product section
+│   │   ├── Features/       # Feature cards grid
+│   │   ├── Specifications/ # Specs table
+│   │   ├── Gallery/        # Image gallery + lightbox
+│   │   ├── GetStarted/     # CTA section
+│   │   └── Footer/         # Site footer
 │   ├── constants/          # External links
+│   ├── types/              # Shared TypeScript types
 │   ├── styles/             # SCSS variables, mixins, global styles
 │   ├── App.tsx
 │   └── main.tsx
@@ -84,8 +94,11 @@ npm run preview
 - **TypeScript** - Type safety
 - **Vite** - Build tool and dev server
 - **SCSS Modules (Sass)** - Styling
-- **Motion** - Animations
-- **Radix UI Dialog** - Accessible lightbox
+- **Motion** - Scroll-reveal animations
+- **Radix UI Dialog** - Accessible mobile menu
+- **yet-another-react-lightbox** - Gallery lightbox
+- **clsx** - Conditional CSS classes
+- **lucide-react** - Icon library
 - **Playwright** - End-to-end testing
 
 ## 📝 License
